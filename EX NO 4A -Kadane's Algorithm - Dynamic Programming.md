@@ -1,6 +1,6 @@
 
 # EX 4A Kadane's Algorithm - Dynamic Programming. 
-## DATE:
+## DATE: 07-11-2005
 ## AIM:
 To Write a Java program to solve the below problem using Kadane's Algorithm.
 A solar company installs solar panels around a circular grid of n buildings. Each building either generates or consumes net energy, represented by integers (+ve for generated, -ve for consumed).
@@ -19,24 +19,55 @@ A single integer: Maximum net energy collectable from a contiguous block (wrappi
 
 Constraints:
 1 <= n <= 10^6
+
+### Developed by: Kurapati Vishnu Vardhan Reddy
+### Register Number: 212223040103
+
+
 ## Algorithm
-1. 
-2. 
-3. 
-4.  
-5.   
+1. Initialize a running sum and track the maximum subarray sum found so far.
+2. Add each element to the running sum as you iterate through the array.
+3. Update the maximum sum whenever the running sum becomes higher than it.
+4. Reset the running sum to zero whenever it drops below zero.
+5. Return the maximum sum found, or zero if all values were negative.
+
 
 ## Program:
-```
-/*
-Program to implement Reverse a String
-Developed by: 
-Register Number:  
-*/
+```java
+import java.util.*;
+
+public class TraderJoeProfit {
+    public static int maxProfit(int[] profits) {
+        //Type your code
+        int sum = 0;
+        int mx = Integer.MIN_VALUE;
+
+        for (int p : profits) {
+            sum += p;
+            mx = Math.max(mx, sum);
+            if (sum < 0) sum = 0;  
+        }
+
+        if(mx<0)return 0;
+        return mx;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] profits = new int[n];
+        for (int i = 0; i < n; i++) {
+            profits[i] = sc.nextInt();
+        }
+        System.out.println(maxProfit(profits));
+    }
+}
+
 ```
 
 ## Output:
 
+<img width="462" height="188" alt="image" src="https://github.com/user-attachments/assets/e87a034d-9b9f-4f98-bc3e-2a2483d48ed8" />
 
 
 ## Result:
